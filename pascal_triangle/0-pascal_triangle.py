@@ -3,25 +3,29 @@
 
 
 def pascal_triangle(n):
-    """Retourne le triangle de Pascal selon l'entrée.
-
-    Cette fonction prend un paramètre `n` et vérifie s'il s'agit
-    exactement du type `int`. Si `n` est un entier et que sa valeur
-    est inférieure ou égale à 0, la fonction renvoie une liste vide.
-    Sinon, elle renvoie simplement `n`.
+    """Retourne le triangle de Pascal sous forme de liste de listes.
 
     Args:
-        n: Valeur d'entrée fournie pour générer le triangle.
+        n (int): Nombre de lignes du triangle à générer.
 
     Returns:
-        list: Une liste vide si `n` est un entier négatif ou nul.
-        n: La valeur originale de `n` si `n` est un entier strictement positif.
+        list: Triangle de Pascal de taille n.
+              Retourne une liste vide si n <= 0 ou si n n'est pas un entier.
     """
-    # Vérifie explicitement le type de `n`.
-    if n is int:
-        # Si `n` est un entier inférieur ou égal à zéro, on renvoie une liste vide.
-        if n <= 0:
-            return []
-        else:
-            # Si `n` est un entier strictement positif, on renvoie la valeur telle quelle.
-            return n
+    if not isinstance(n, int) or n <= 0:
+        return []
+
+    triangle = []
+    for ligne in range(n):
+        if ligne == 0:
+            triangle.append([1])
+            continue
+
+        precedent = triangle[-1]
+        rang = [1]
+        for i in range(len(precedent) - 1):
+            rang.append(precedent[i] + precedent[i + 1])
+        rang.append(1)
+        triangle.append(rang)
+
+    return triangle
