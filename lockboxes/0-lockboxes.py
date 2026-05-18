@@ -30,7 +30,7 @@ def canUnlockAll(boxes):
     while changed:
         changed = False
         for idx, box in enumerate(boxes):
-            # Ouvre un coffre seulement si on a la clé et qu'il n'est pas déjà ouvert.
+            # Ouvre une box si on a la clé et qu'il n'est pas déjà ouvert.
             if idx not in opened and idx in keys:
                 opened.add(idx)
                 keys.update(box)
