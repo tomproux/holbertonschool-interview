@@ -29,8 +29,6 @@ if __name__ == "__main__":
             match = re.match(pattern, line)
             
             if match:
-                line_count += 1
-                
                 try:
                     status_code = int(match.group(6))
                     file_size = int(match.group(7))
@@ -38,6 +36,7 @@ if __name__ == "__main__":
                     # Skip if status code or size is not an integer
                     continue
                 
+                line_count += 1
                 total_size += file_size
                 
                 # Only track allowed status codes
