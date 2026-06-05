@@ -21,7 +21,7 @@ if __name__ == "__main__":
     status_codes = {}
     
     # Pattern to match log format: IP - [date] "METHOD path HTTP/VERSION" status_code size
-    pattern = r'^(\d+\.\d+\.\d+\.\d+) - \[(.*?)\] "(\w+) (.*?) (HTTP/[\d\.]+)" (\d+) (\d+)$'
+    pattern = r'^(\d+\.\d+\.\d+\.\d+) - \[(.*?)\] "(\w+) (.*?) (HTTP/[\d\.]+)"\s+(\d+)\s+(\d+)$'
     
     try:
         for line in sys.stdin:
