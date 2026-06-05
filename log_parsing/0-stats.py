@@ -48,7 +48,8 @@ if __name__ == "__main__":
                 # Print stats every 10 lines
                 if line_count % 10 == 0:
                     print_stats(total_size, status_codes)
-                    
     except KeyboardInterrupt:
-        # Print stats on CTRL + C
+        pass
+    finally:
+        # Print stats at the end or on CTRL + C
         print_stats(total_size, status_codes)
