@@ -4,7 +4,8 @@
 
 def validUTF8(data):
     """
-    Determines if a given data set represents a valid UTF-8 encoding.
+    Determines if a given data set represents 
+    a valid UTF-8 encoding.
     
     Args:
         data: A list of integers representing bytes of data
