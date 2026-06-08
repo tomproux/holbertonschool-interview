@@ -4,15 +4,14 @@
 
 def validUTF8(data):
     """
-    Determines if a given data set represents 
-    a valid UTF-8 encoding.
-    
+    Determines if a given data set represents a valid UTF-8 encoding.
+
     Args:
         data: A list of integers representing bytes of data
-        
+
     Returns:
         True if data is a valid UTF-8 encoding, False otherwise
-        
+
     UTF-8 encoding rules:
     - 1-byte character: 0xxxxxxx
     - 2-byte character: 110xxxxx 10xxxxxx
@@ -21,11 +20,11 @@ def validUTF8(data):
     """
     # Track how many continuation bytes we expect
     num_bytes = 0
-    
+
     for byte in data:
         # Only keep the 8 least significant bits
         byte = byte & 0xFF
-        
+
         if num_bytes == 0:
             # Determine the length of this UTF-8 character
             if (byte >> 7) == 0:
@@ -48,6 +47,4 @@ def validUTF8(data):
             if (byte >> 6) != 0b10:
                 return False
             num_bytes -= 1
-    
-    # Valid if we've processed all continuation bytes
-    return num_bytes == 0
+
