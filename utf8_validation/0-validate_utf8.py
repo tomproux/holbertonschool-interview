@@ -48,3 +48,5 @@ def validUTF8(data):
                 return False
             num_bytes -= 1
 
+    # Valid if we've processed all continuation bytes
+    return num_bytes == 0
