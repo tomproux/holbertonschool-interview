@@ -4,3 +4,4 @@
 #### minimum_operations ####
 #### log_parsing ####
 #### utf8_validation ####
+#### nqueens ####
