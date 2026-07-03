@@ -5,3 +5,5 @@
 #### log_parsing ####
 #### utf8_validation ####
 #### nqueens ####
+#### starwars_api ####
+#### rotate_2d_matrix ####
