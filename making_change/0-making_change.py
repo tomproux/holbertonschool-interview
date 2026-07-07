@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Provide a function to determine the fewest coins needed to make change."""
+
 
 def makeChange(coins, total):
     """
